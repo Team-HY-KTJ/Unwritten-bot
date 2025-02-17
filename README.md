@@ -37,7 +37,8 @@ git config --global core.editor "code --wait"
 (참고로 이들은 Discord Developer Portal 및 02/17 회의록에서 확인 가능하다.)  
 또한, 로컬에서의 백엔드 테스트를 위해 백엔드 api 서버 주소도 저장해두자.  
 
-```env
+```
+# .env 파일에 아래 내용 작성
 # Discord Bot
 DISCORD_BOT_TOKEN=your_bot_token_here
 APPLICATION_ID=your_app_id_here
@@ -47,4 +48,3 @@ BACKEND_API_URL=http://000.000.000.00:3000/api
 ```
 
 이 값들은 `.env` 파일에 저장하고 `.gitignore`에 추가하여 관리한다.
-```
