@@ -47,7 +47,10 @@ const commands = [
                 .addSubcommand(subcommand =>
                     subcommand
                         .setName('인벤토리')
-                        .setDescription('인벤토리에 대해 물어봅니다.')))
+                        .setDescription('인벤토리에 대해 물어봅니다.'))),
+    new SlashCommandBuilder()
+        .setName('퀘스트')
+        .setDescription('진행할 수 있는 퀘스트 목록 표시'),
     // 다른 명령어 추가 가능
 ];
 

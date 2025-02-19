@@ -111,27 +111,27 @@ client.on('interactionCreate', async (interaction) => {
 
     const memberRoles = interaction.member.roles.cache.map(role => role.name);
 
-    // Permission checks
-    if (command.name === '회원증') {
-        // Everyone can access '회원증 발급'
-        // No additional checks needed
-    } else if (command.name === '사서' && interaction.options.getSubcommand() === '인사하기') {
-        // '도서관 회원' can access '회원증' and '사서 인사하기'
-        if (!memberRoles.includes('도서관 회원') && !memberRoles.includes('도서관 정회원')) {
-            await interaction.reply('이 명령어를 사용할 권한이 없습니다. 도서관 회원증이 필요합니다.');
-            return;
-        }
-    } else {
-        // '도서관 정회원' can access all commands
-        if (!memberRoles.includes('도서관 정회원')) {
-            if (!memberRoles.includes('도서관 회원')) {
-                await interaction.reply('이 명령어를 사용할 권한이 없습니다. 도서관 회원증이 필요합니다.');
-            } else {
-                await interaction.reply('이 명령어를 사용할 권한이 없습니다. 먼저 사서와 대화를 나눠봅시다.');
-            }
-            return;
-        }
-    }
+    // // Permission checks
+    // if (command.name === '회원증') {
+    //     // Everyone can access '회원증 발급'
+    //     // No additional checks needed
+    // } else if (command.name === '사서' && interaction.options.getSubcommand() === '인사하기') {
+    //     // '도서관 회원' can access '회원증' and '사서 인사하기'
+    //     if (!memberRoles.includes('도서관 회원') && !memberRoles.includes('도서관 정회원')) {
+    //         await interaction.reply('이 명령어를 사용할 권한이 없습니다. 도서관 회원증이 필요합니다.');
+    //         return;
+    //     }
+    // } else {
+    //     // '도서관 정회원' can access all commands
+    //     if (!memberRoles.includes('도서관 정회원')) {
+    //         if (!memberRoles.includes('도서관 회원')) {
+    //             await interaction.reply('이 명령어를 사용할 권한이 없습니다. 도서관 회원증이 필요합니다.');
+    //         } else {
+    //             await interaction.reply('이 명령어를 사용할 권한이 없습니다. 먼저 사서와 대화를 나눠봅시다.');
+    //         }
+    //         return;
+    //     }
+    // }
 
     try {
         await command.execute(interaction, userAccounts);
