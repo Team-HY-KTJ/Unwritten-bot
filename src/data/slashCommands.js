@@ -51,6 +51,9 @@ const commands = [
     new SlashCommandBuilder()
         .setName('퀘스트')
         .setDescription('진행할 수 있는 퀘스트 목록 표시'),
+    new SlashCommandBuilder()
+        .setName('모험의서')
+        .setDescription('내 도전과제 현황 확인'),
     // 다른 명령어 추가 가능
 ];
 
